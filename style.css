@@ -31,6 +31,7 @@ a {
 
 .wrapper {
     max-width: 1400px;
+    height: 95vh;
     border: 5px solid transparent;
     border-image: url(images/block.webp) 30 round;
     text-align: center;
@@ -157,5 +158,16 @@ a {
 .gallery-item > img{
     max-height: 25vh;
     max-width: 20vw;
+}
+
+.wrapper-gallery {
+    max-width: 1400px;
+    border: 5px solid transparent;
+    border-image: url(images/block.webp) 30 round;
+    text-align: center;
+    margin: 20px auto;
+    background-image: url(images/háttér1.png);
+    background-position: center;
+    background-size: cover; 
 }
 
