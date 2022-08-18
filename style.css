@@ -1,0 +1,161 @@
+@import url('http://fonts.cdnfonts.com/css/minecraft-4');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Minecraft', sans-serif;
+}
+
+body {
+    background-image: url(images/háttér\ alap.jpg);
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.image-header {
+    max-height: 33vh;
+    min-width: 100%;
+    border-bottom: 5px solid transparent;
+    border-image: url(images/block.webp) 30 round;
+}
+
+.wrapper {
+    max-width: 1400px;
+    border: 5px solid transparent;
+    border-image: url(images/block.webp) 30 round;
+    text-align: center;
+    margin: 20px auto;
+    background-image: url(images/háttér1.png);
+    background-position: center;
+    background-size: cover; 
+}
+
+/* ------------------------- start page ------------------------- */
+
+.start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 10%;
+}
+
+.start-image {
+    max-width: 100px;
+}
+
+/* ------------------------- main page ------------------------- */
+
+.menu {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    width: 15vw;
+}
+
+.menu-elements {
+    border: 5px solid transparent;
+    border-image: url(images/block.webp) 30 round;
+    background-color: rgba(255, 255, 255, 0.568);
+    text-align: center;
+    padding: 5px 2px;
+    margin: 1rem;
+    width: 10rem;
+}
+
+.menu-elements:hover, .active {
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.welcome {
+    margin:  8vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+    
+}
+
+.welcome-content {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    text-align: center;
+    display: inline-block;
+    border: 10px solid transparent;
+    border-image: url(images/book.jpg) 50 round;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.568);
+
+}
+
+.welcome-content > h1 {
+    margin: 20px 0;
+}
+
+.welcome-content > p {
+    padding: 1rem;
+    margin: 10px;
+    text-align: left;
+}
+
+/* ------------------------- story ------------------------- */
+
+.navigation-arrows {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+}
+
+.navigation-arrows > a{
+    padding: 2rem;
+    max-height: 2vh;
+}
+
+
+.arrow-image {
+    max-height: 2vh;
+    margin: .2rem;
+    
+}
+
+/* ------------------------- portal ------------------------- */
+
+.portal-form {
+    margin-top: 10%;
+}
+
+/* ------------------------- gallery ------------------------- */
+
+.welcome-gallery {
+    margin: 8vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    min-height: 1200px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    
+}
+
+.gallery-item {
+    max-height: 5vh;
+    max-width: 5vw;
+}
+.gallery-item > img{
+    max-height: 25vh;
+    max-width: 20vw;
+}
+
