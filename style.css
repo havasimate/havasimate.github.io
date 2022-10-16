@@ -1,173 +1,329 @@
-@import url('http://fonts.cdnfonts.com/css/minecraft-4');
+
+@font-face {font-family: "Minecraft enchantment"; src: url("minecraft-enchantment.ttf"); }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Minecraft', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Minecraft enchantment", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-image: url(images/háttér\ alap.jpg);
-    background-position: center;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
+  background: rgb(24, 20, 20);
+  margin: 0;
+  padding: 0;
+  cursor: url(images/cursor.png), auto;
+}
+
+iframe {
+  display: block;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    width: 100%;
-    font-size: 1.4rem;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  max-width: 100%;
 }
 
-.image-header {
-    max-height: 33vh;
-    min-width: 100%;
-    border-bottom: 5px solid transparent;
-    border-image: url(images/block.webp) 30 round;
+header {
+  min-height: 200px;
+  border-bottom: 5px solid transparent;
+  background-image: url(images/fejlec.svg);
+  border-image: url(images/block.webp) 30 round;
+}
+
+img,
+input {
+  max-width: 100%;
+}
+
+p {
+  line-height: 1.1;
 }
 
 .wrapper {
-    max-width: 1400px;
-    height: 95vh;
-    border: 5px solid transparent;
-    border-image: url(images/block.webp) 30 round;
-    text-align: center;
-    margin: 20px auto;
-    background-image: url(images/háttér1.png);
-    background-position: center;
-    background-size: cover; 
+  max-width: 1400px;
+  border: 5px solid transparent;
+  border-image: url(images/block.webp) 30 round;
+  text-align: center;
+  margin: 0 auto;
+  background-image: url(images/hatter1.png);
+  background-position: center;
+  background-size: cover;
 }
 
-/* ------------------------- start page ------------------------- */
-
-.start {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 10%;
+.dropdown {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: inline-block;
+  margin: auto;
 }
 
-.start-image {
-    max-width: 100px;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border: 5px solid transparent;
+  border-image: url(images/block.webp) 30 round;
+  background-image: url(images/hatter_alap.jpg);
+  z-index: 2;
 }
 
-/* ------------------------- main page ------------------------- */
+.dropdown-content a,
+.dropbtn p {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 .menu {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-    width: 15vw;
+  list-style: none;
+  padding: 0;
 }
 
 .menu-elements {
-    border: 5px solid transparent;
-    border-image: url(images/block.webp) 30 round;
-    background-color: rgba(255, 255, 255, 0.568);
-    text-align: center;
-    padding: 5px 2px;
-    margin: 1rem;
-    width: 10rem;
+  border: 5px solid transparent;
+  border-image: url(images/block.webp) 30 round;
+  background-color: rgba(255, 255, 255, 0.568);
+  text-align: center;
+  padding: 5px 2px;
+  margin: 1rem;
+  width: 10rem;
 }
 
-.menu-elements:hover, .active {
-    color: rgb(255, 255, 255);
-    background-color: black;
+.menu-button {
+  width: 99vw;
+  margin: 0;
 }
 
-.welcome {
-    margin:  8vh;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    text-align: center;
-    
+.menu-elements:hover,
+.active {
+  color: rgb(255, 255, 255);
+  background-color: black;
 }
 
-.welcome-content {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-    text-align: center;
-    display: inline-block;
-    border: 10px solid transparent;
-    border-image: url(images/book.jpg) 50 round;
-    border-radius: 10%;
-    background-color: rgba(255, 255, 255, 0.568);
-
+#main {
+  margin: 30px 20px;
+  font-size: 0.9rem;
 }
-
-.welcome-content > h1 {
-    margin: 20px 0;
-}
-
-.welcome-content > p {
-    padding: 1rem;
-    margin: 10px;
+#main {
+    margin: 30px 5%;
     text-align: left;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+.carousel {
+  position: relative;
+  height: 500px;
+  width: 345px;
+  margin: 30px auto;
 }
 
-/* ------------------------- story ------------------------- */
-
-.navigation-arrows {
-    display: grid;
-    grid-template-columns: 6fr 6fr;
+.carousel > ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
 }
 
-.navigation-arrows > a{
-    padding: 2rem;
-    max-height: 2vh;
+.slide > img {
+  margin: 1rem auto;
 }
 
-
-.arrow-image {
-    max-height: 2vh;
-    margin: .2rem;
-    
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
 }
 
-/* ------------------------- portal ------------------------- */
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-button-next {
+  position: absolute;
+  z-index: 1;
+  background: none;
+  border: none;
+  top: 84%;
+  right: 61px;
+  cursor: pointer;
+}
+.carousel-button-prev {
+  position: absolute;
+  z-index: 1;
+  background: none;
+  border: none;
+  top: 84%;
+  left: 61px;
+  cursor: pointer;
+}
+.gallery-item {
+  margin: 30px;
+}
+#cast-title {
+  margin: 40px auto;
+  font-size: 2rem;
+}
+
+.dudes > img {
+  max-height: 50%;
+}
+
+.dudes > img:hover {
+  transition-duration: 0.2s;
+  filter: drop-shadow(0px 8px 12px white);
+}
+
+.story {
+  max-width: 1000px;
+}
+
+.story-title {
+  margin: 50px auto;
+}
+
+.portal {
+  background-image: url("images/portal_vegleges.png");
+  min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 .portal-form {
-    margin-top: 10%;
+  margin: 4rem 0 0 0;
+  font-size: 2rem;
+}
+.portal-form input {
+  border: 5px solid transparent;
+  font-size: 1.3rem;
+  border-image: url(images/block.webp) 30 round;
 }
 
-/* ------------------------- gallery ------------------------- */
+@media screen and (min-width: 1400px) {
+  header {
+    height: 325px;
+  }
+  h1 {
+    font-size: 4rem;
+  }
 
-.welcome-gallery {
-    margin: 8vh;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    min-height: 1200px;
-}
-
-.gallery {
+  .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    
-    
-}
+    column-gap: 50px;
+    row-gap: 50px;
+  }
+  .cast {
+    height: 100vh;
+  }
 
-.gallery-item {
-    max-height: 5vh;
-    max-width: 5vw;
-}
-.gallery-item > img{
-    max-height: 25vh;
-    max-width: 20vw;
-}
+  .dudes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px auto;
+  }
 
-.wrapper-gallery {
+  .dudes > img {
+    max-width: 20%;
+    transition-duration: 0.2s;
+  }
+
+  .dudes > img:hover {
+    max-width: 30%;
+    transition-duration: 0.2s;
+    filter: drop-shadow(0px 8px 12px white);
+  }
+  .img1 {
+    margin-top: 2%;
+    margin-right: -5%;
+  }
+
+  .img2 {
+    margin-right: -5%;
+  }
+
+  .img3 {
+    margin-right: -5%;
+  }
+
+  .dropdown {
+    display: flex;
+    position: -webkit-sticky;
+    margin: 20px 0 0 20px;
+    width: 11.5vw;
+    top: 20px;
+  }
+
+  .menu-button {
+    max-width: 200px;
+  }
+
+  .story, .story2 {
+    font-size: 1.2rem;
+    text-align: left;
+  }
+
+  .story2 {
+    margin: -20px 20px 30px 20px;
+  }
+
+  #main {
+    margin: 30px 20px;
+    text-align: left;
+    display: flex;
     max-width: 1400px;
+    flex-direction: row;
+  }
+
+  #main h1 {
+    margin: 30px 200px;
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin: 20px;
+  }
+
+
+
+  .slideshow-container {
+    font-size: 2.2rem;
+    height: 90vh;
+  }
+
+  .portal {
+    height: 100vh;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  .portal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .portal h1 {
+    font-size: 5rem;
+  }
+  .portal-form input {
+    margin-top: 40%;
+    font-size: 3rem;
     border: 5px solid transparent;
     border-image: url(images/block.webp) 30 round;
-    text-align: center;
-    margin: 20px auto;
-    background-image: url(images/háttér1.png);
-    background-position: center;
-    background-size: cover; 
-}
+  }
 
+  .portal-form button:hover {
+    cursor: pointer;
+  }
+}

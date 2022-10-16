@@ -1,29 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/flag.png" type="image/x-icon">
-    
-    <title>Draft</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/flag.png" type="image/x-icon" />
+
+    <title>Remember Lmemberg</title>
+  </head>
+  <body>
     <div class="wrapper">
-        <header>
-            <img class="image-header" src="images/fejléc.png" alt="header with caption">
-        </header>
-        <div class="welcome">
-            <ul class="menu">
-                <li class="menu-elements"><a href="index.html">MAIN PAGE</a></li>
-                <li class="menu-elements"><a href="story.html">STORY</a></li>
-                <li class="menu-elements active"><a href="cast.html">CAST</a></li>
-                <li class="menu-elements"><a href="gallery.html">GALERY</a></li>
-                <li class="menu-elements"><a href="portal.html">PORTAL</a></li>
-            </ul>
-            <h1>THE cast</h1>
+      <header id="header"></header>
+      <div class="dropdown">
+        <div class="menu-button menu-elements active dropbtn">
+          <p>MENU</p>
         </div>
+        <div class="dropdown-content">
+          <ul class="menu">
+            <li class="menu-elements">
+              <a href="main.html">MAIN PAGE</a>
+            </li>
+            <li class="menu-elements active"><a href="cast.html">CAST</a></li>
+            <li class="menu-elements"><a href="gallery.html">GALLERY</a></li>
+            <li class="menu-elements"><a href="portal.html">PORTAL</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cast">
+        <div id="cast-title"><h1>THE CAST</h1></div>
+        <div class="dudes">
+          <img src="images/1tubbo.png" alt="Tubbo" class="characters img1" />
+          <img src="images/2tommy.png" alt="Tommy" class="characters img2" />
+          <img
+            src="images/3wilbursoot.png"
+            alt="Wilbursoot"
+            class="characters img3"
+          />
+          <img
+            src="images/4itsfundy.png"
+            alt="Itsfundy"
+            class="characters img4"
+          />
+          <img
+            src="images/5eretnek.png"
+            alt="Eretnek"
+            class="characters img5"
+          />
+        </div>
+      </div>
     </div>
-</body>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+      tippy(".img1", {
+        content:
+          "<h2>Tubbo_</h2><br>secretary of state<br>founding member of l’manberg, he is known for his absolute loyalty to the<br>cause of the revolution and for loving bees<br><br>„i am using my words<br>i am using my words<br>i am using my words!”",
+        allowHTML: true,
+      });
+      tippy(".img2", {
+        content:
+          "<h2>TommyInnit</h2><iframe width='320' height='240' src='images/tommy_card.mp4'  frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+        allowHTML: true,
+        interactive: true,
+      });
+      tippy(".img3", {
+        content:
+          "<h2>WilburSoot</h2><br>key founder of l’manberg, the leader of the revolution, a very old man, who<br>used his infinite wisdom to create a “camarvan” surrounded by fences<br><br>„no matter what happens during this war, no matter who wins and who loses,<br>just remember that we’re on the right side of history here.”",
+        allowHTML: true,
+      });
+      tippy(".img4", {
+        content:
+          "<h2>ItsFundy</h2><br>little champion<br>son of the president, wilbur soot, the first citizen of l’manberg through birth.<br>he has a lovely crayon suit, and he is very loving because he is dutch. that’s<br>what the dutch people are like – which he confirmed to be very true.<br><br>„the wall was literally built around me”",
+        allowHTML: true,
+      });
+      tippy(".img5", {
+        content: "<h2>The_Eret</h2><br>Traitor<br><br>Fuck Eret.",
+        allowHTML: true,
+      });
+    </script>
+  </body>
 </html>
